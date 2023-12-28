@@ -9,5 +9,11 @@ export interface IPath {
 export interface BuildOptions {
   mode: BuildMode;
   paths: IPath;
+  port: number;
   isDev: Boolean;
+}
+
+export interface IEnv {
+  mode: BuildMode,
+  port?: number
 }
