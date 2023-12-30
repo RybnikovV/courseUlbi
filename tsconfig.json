@@ -5,7 +5,7 @@
     "module": "ES6",
     // в какую версию кода компилируем
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true, 
     "moduleResolution": "node",
     // Если библиотека не имеет default import,
