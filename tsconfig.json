@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "ES6",
+    "module": "ESNext",
     // в какую версию кода компилируем
     "target": "es5",
     "jsx": "react-jsx",
