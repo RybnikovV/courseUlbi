@@ -4,12 +4,14 @@ import MainLazy from './pages/MainPage/MainLazy';
 import AboutLazy from './pages/AboutPage/AboutLazy';
 import { Suspense } from 'react';
 import useTheme from './theme/useTheme';
+import classNames from './helpers/classNames/classNames';
 
 const App = () => {
   const { theme, changeTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    // <div className={`app ${theme}`}>
+    <div className={classNames('app', {}, [theme])}>
       <button onClick={changeTheme}>toggleTheme</button>
       <Link to={'/'}>Главная</Link>
       <Link to={'/about'}>О нас</Link>

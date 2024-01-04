@@ -1,2 +1,18 @@
-шаблоннынй литерал
-useContext
+JS
+  шаблоннынй литерал
+  Object.keys, values, entries
+  instanceof => Symbol.hasInstance
+  Array.constructor
+  for..of vs for...in
+  range[Symbol.iterator]
+  суррогатные пары
+  Итерируемые объекты – это объекты, которые реализуют метод Symbol.iterator, как было описано выше.
+  Псевдомассивы – это объекты, у которых есть индексы и свойство length, то есть, они выглядят как массивы.
+  Array.from
+
+React
+  useContext
+
+Ts
+  smth as String
+  Record<string, boolean>
