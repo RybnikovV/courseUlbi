@@ -1,37 +1,23 @@
-import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import { buildWebpackConfig } from './config/webpack/buildWebpackConfig';
+import { IEnv } from './config/webpack/types/config'
 
-// const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpack = require('webpack');
+export default (env: IEnv): webpack.Configuration => {
+  const options = {
+    paths: {
+      entry: path.resolve(__dirname, 'src', 'index.tsx'),
+      html: path.resolve(__dirname, 'public', 'index.html'),
+      output: path.resolve(__dirname, 'build'),
+      baseModule: path.resolve(__dirname, 'src'),
+      nodeModule: path.resolve(__dirname, 'node_modules')
+    },
+    mode: env.mode,
+    get isDev() {
+      return this.mode === 'development'
+    },
+    port: env.port || 3000
+  }
 
-const config: webpack.Configuration = {
-  mode: 'development',
-  entry: path.resolve(__dirname, 'src', 'index.ts'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].[contenthash].js',
-    clean: true,
-  },
-  plugins: [
-    new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html')
-    })
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
+  return buildWebpackConfig(options)
 };
-
-export default config;
