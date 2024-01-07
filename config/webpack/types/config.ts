@@ -3,7 +3,9 @@ export type BuildMode = 'production' | 'development';
 export interface IPath {
   entry: string;
   output: string;
-  html: string
+  html: string;
+  baseModule: string;
+  nodeModule: string;
 }
 
 export interface BuildOptions {

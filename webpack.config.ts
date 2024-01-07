@@ -8,7 +8,9 @@ export default (env: IEnv): webpack.Configuration => {
     paths: {
       entry: path.resolve(__dirname, 'src', 'index.tsx'),
       html: path.resolve(__dirname, 'public', 'index.html'),
-      output: path.resolve(__dirname, 'build')
+      output: path.resolve(__dirname, 'build'),
+      baseModule: path.resolve(__dirname, 'src'),
+      nodeModule: path.resolve(__dirname, 'node_modules')
     },
     mode: env.mode,
     get isDev() {
