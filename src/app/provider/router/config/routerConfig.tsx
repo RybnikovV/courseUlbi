@@ -13,4 +13,4 @@ const routerConfig: PathRouteProps[]= [
   },
 ];
 
-export {routerConfig};
+export { routerConfig };

@@ -13,7 +13,7 @@ const App = () => {
       <button onClick={changeTheme}>toggleTheme</button>
       <Link to={'/'}>Главная</Link>
       <Link to={'/about'}>О нас</Link>
-      <AppRouter></AppRouter>
+      <AppRouter/>
     </div>
   )
 }
