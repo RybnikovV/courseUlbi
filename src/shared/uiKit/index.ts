@@ -1,0 +1,1 @@
+export { CustomLink } from '../uiKit/CusomLink/CustomLink'; 

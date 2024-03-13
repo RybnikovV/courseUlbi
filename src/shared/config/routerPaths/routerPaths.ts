@@ -7,5 +7,3 @@ export const routerPaths: Record<RouterKeys, string> = {
   [RouterKeys.MAIN]: '/',
   [RouterKeys.ABOUT]: '/about',
 };
-
-

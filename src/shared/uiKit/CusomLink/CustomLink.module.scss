@@ -1,0 +1,8 @@
+.customlink {
+	font: var(--font-m);
+	text-decoration: none;
+	color: var(--secondary-color);
+	&_active {
+		color: var(--primary-color);
+	}
+}
