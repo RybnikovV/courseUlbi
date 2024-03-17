@@ -3,11 +3,17 @@ import { FC } from 'react';
 import { clsNames } from '@/shared/lib';
 import cls from './Navbar.module.scss';
 
-import { CustomLink } from '@/shared/uiKit';
+import IconThemeDark from '@/shared/assets/svg/iconThemeDark.svg';
+import IconThemeLight from '@/shared/assets/svg/iconThemeLight.svg';
+
+import { EThemes } from '@/shared/config/theme';
+
+import { CustomLink, Button, EButtonTheme } from '@/shared/uiKit';
 
 interface INavbarProps  {
 	className?: string;
 	children?: React.ReactNode;
+	theme: EThemes;
 	changeTheme: () => void;
 };
 
@@ -15,11 +21,14 @@ export const Navbar: FC<INavbarProps> = (props) => {
 	const { 
 		className,
 		changeTheme,
+		theme
 	 } = props;
 
 	return (
 		<div className={clsNames(cls.navbar, {}, [className])}>
-			<button onClick={changeTheme}>toggleTheme</button>
+			<Button onClick={changeTheme} theme={EButtonTheme.TEXT}>
+			 {EThemes.DARK === theme ? <IconThemeDark/> : <IconThemeLight/>}
+			</Button>
 			<div className={cls.navbar__links}>
 				<CustomLink to={'/'} className={cls['navbar__link-item']}>
 					Главная

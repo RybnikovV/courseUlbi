@@ -1,10 +1,10 @@
-import { ThemeContext, LOCAL_STORAGE_THEME_KEY, Themes } from './ThemeContext';
+import { ThemeContext, LOCAL_STORAGE_THEME_KEY, EThemes } from './ThemeContext';
 import { useState, FC, PropsWithChildren } from 'react';
 
-const themeByLocalStorage = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes;
+const themeByLocalStorage = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as EThemes;
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = useState<Themes>(themeByLocalStorage || Themes.LIGHT);
+  const [theme, setTheme] = useState<EThemes>(themeByLocalStorage || EThemes.LIGHT);
 
   return (
     <ThemeContext.Provider value={{

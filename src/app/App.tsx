@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Navbar changeTheme={changeTheme}/>
+      <Navbar changeTheme={changeTheme} theme={theme}/>
       <AppRouter/>
     </div>
   )
