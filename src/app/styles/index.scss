@@ -8,4 +8,11 @@
   background-color: var(--bg-color);
   font: var(--font-m);
   color: var(--primary-color);
+  &__content-wrapper {
+    display: flex;
+  }
+  &__content {
+    padding: 8px 16px;
+    flex-grow: 1;
+  }
 }

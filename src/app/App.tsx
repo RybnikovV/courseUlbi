@@ -6,13 +6,20 @@ import classNames from  '@/shared/lib/classNames/classNames';
 
 import { Navbar } from '@/widgets/Navbar';
 
+import { Sidebar } from '@/widgets/Sidebar';
+
 const App = () => {
-  const { theme, changeTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Navbar changeTheme={changeTheme} theme={theme}/>
-      <AppRouter/>
+      <Navbar/>
+      <div className='app__content-wrapper'>
+        <Sidebar/>
+        <div className='app__content'>
+          <AppRouter/>
+        </div>
+      </div>
     </div>
   )
 }
