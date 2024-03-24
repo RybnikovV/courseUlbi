@@ -5,10 +5,10 @@ import { routerPaths } from '@/shared/config/routerPaths/routerPaths';
 
 const routerConfig: PathRouteProps[]= [
   {
-    path: routerPaths.main,
+    ...routerPaths.main,
     element: <MainPage/>,
   }, {
-    path: routerPaths.about,
+    ...routerPaths.about,
     element: <AboutPage/>,
   },
 ];

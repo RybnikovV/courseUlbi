@@ -8,7 +8,10 @@ import { EThemes, useTheme } from '@/shared/config/theme';
 import IconThemeDark from '@/shared/assets/svg/iconThemeDark.svg';
 import IconThemeLight from '@/shared/assets/svg/iconThemeLight.svg';
 
+import { LangSwitcher } from '@/features/LangSwitcher';
+
 import cls from './Sidebar.module.scss';
+import { useTranslation } from 'react-i18next';
 
 interface ISidebarProps {
 	className?: string;
@@ -23,6 +26,7 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
 	 } = props;
 	const [isSidebarOpened, setSidebarOpened] = useState(false);
 	const { theme, changeTheme } = useTheme();
+	const { t } = useTranslation();
 
 	const onToggle = () => {
 		setSidebarOpened(isSidebarOpened => !isSidebarOpened);
@@ -36,7 +40,7 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
 					<Button 
 						onClick={onToggle}
 						theme={EButtonTheme.PRIMARY}>
-							{isSidebarOpened ? 'закрыть' : 'открыть'}
+							{isSidebarOpened ? t('закрыть') : t('открыть')}
 					</Button>
 					{children}
 				</div>
@@ -44,6 +48,7 @@ export const Sidebar: FC<ISidebarProps> = (props) => {
 					<Button onClick={changeTheme} theme={EButtonTheme.TEXT}>
 						{EThemes.DARK === theme ? <IconThemeDark/> : <IconThemeLight/>}
 					</Button>
+					<LangSwitcher/>
 				</div>
 		</div>
 	);
