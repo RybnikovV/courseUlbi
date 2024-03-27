@@ -8,6 +8,23 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
     use: 'ts-loader',
     exclude: /node_modules/,
   };
+  
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: 'babel-loader'
+    // use: {
+    //   loader: "babel-loader",
+    //   options: {
+    //     presets: [
+    //       '@babel/preset-env',
+    //       '@babel/preset-typescript',
+    //       '@babel/preset-react'
+    //     ]
+    //   }
+    // }
+  };
+
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -45,9 +62,10 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
   };
 
   return [
-    tsLoader,
     scssLoader,
     svgloader,
+    babelLoader,
+    tsLoader,
     imgLoader
   ]
 };
