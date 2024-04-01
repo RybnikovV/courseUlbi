@@ -1,21 +1,22 @@
-import { PathRouteProps } from 'react-router';
+import { type PathRouteProps } from 'react-router';
 
 interface ICustomPathRouteProps extends PathRouteProps {
-  children: string
+  children: string;
+  path: string;
 }
 
 export enum RouterKeys {
   MAIN = 'main',
   ABOUT = 'about',
-};
+}
 
 export const routerPaths: Record<RouterKeys, ICustomPathRouteProps> = {
   [RouterKeys.MAIN]: {
     path: '/',
-    children: 'главная'
+    children: 'главная',
   },
   [RouterKeys.ABOUT]: {
     path: '/about',
-    children: 'о нас'
+    children: 'о нас',
   },
 };

@@ -1,18 +1,18 @@
-import webpack from 'webpack';
-import { BuildOptions } from './types/config';
+import type webpack from 'webpack';
+import { type BuildOptions } from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
+export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
   const tsLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   };
-  
+
   const babelLoader = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
-    use: 'babel-loader'
+    use: 'babel-loader',
     // use: {
     //   loader: "babel-loader",
     //   options: {
@@ -29,23 +29,23 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
     test: /\.s[ac]ss$/i,
     use: [
       // Creates `style` nodes from JS strings
-      isDev ? "style-loader" : {
-        loader: MiniCssExtractPlugin.loader,
-      },
+      isDev
+        ? 'style-loader'
+        : {
+            loader: MiniCssExtractPlugin.loader,
+          },
       // Translates CSS into CommonJS
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: /\.module./i,
-            localIdentName: isDev 
-              ? '[path][name]__[local]--[hash:base64:5]' 
-              : '[hash:base64:8]' 
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
           },
-        }
+        },
       },
       // Compiles Sass to CSS
-      "sass-loader",
+      'sass-loader',
     ],
   };
   const svgloader = {
@@ -61,11 +61,5 @@ export const buildLoaders = ({isDev}: BuildOptions): webpack.RuleSetRule[] => {
     ],
   };
 
-  return [
-    scssLoader,
-    svgloader,
-    babelLoader,
-    tsLoader,
-    imgLoader
-  ]
+  return [scssLoader, svgloader, babelLoader, tsLoader, imgLoader];
 };

@@ -10,16 +10,18 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'ru',
-    debug: __IS_DEV__,
+    debug: _IS_DEV_,
 
     interpolation: {
       escapeValue: false,
     },
 
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
-    }
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+  })
+  .catch((k) => {
+    console.log(k);
   });
-
 
 export default i18n;

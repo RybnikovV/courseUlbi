@@ -5,11 +5,12 @@ import { ThemeProvider } from '@/shared/config/theme';
 
 import '@/shared/config/i18n/i18nConfig';
 
-const root = createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root')!;
+const root = createRoot(rootElement);
 root.render(
   <BrowserRouter>
     <ThemeProvider>
-      <App/>
+      <App />
     </ThemeProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
 );

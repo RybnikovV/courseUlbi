@@ -7,10 +7,11 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
+    "strict": true,
     // в какую версию кода компилируем
     "target": "es5",
     "jsx": "react-jsx",
-    "allowJs": true, 
+    "allowJs": true,
     "moduleResolution": "node",
     // Если библиотека не имеет default import,
     // лоадеры вроде ts-loader или babel-loader автоматически создают их
