@@ -12,10 +12,8 @@ export const LangSwitcher: FC<ILangSwitcherProps> = (props) => {
   const { t, i18n } = useTranslation();
 
   const onTranslateToggle = (): void => {
+    // eslint-disable-next-line
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-    console.log(
-      'asdfffffffffffffffffffffffffffffsadffffffffffffffffffffffffffffdassssfasdfasdfasdfasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
-    );
   };
 
   return (

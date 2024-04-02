@@ -3,6 +3,7 @@
 	background-color: transparent;
 	border: 1px solid var(--primary-color);
 	cursor: pointer;
+
 	&:hover {
 		opacity: .6;
 	}
@@ -12,11 +13,13 @@
 		border: 1px solid var(--bg-color-secondary);
 		color: var(--primary-color);
 	}
+
 	&_secondary {
 		background-color: var(--bg-color-secondary);
 		border: 1px solid var(--bg-color);
 		color: var(--primary-color);
 	}
+
 	&_text {
 		border: 0;
 	}

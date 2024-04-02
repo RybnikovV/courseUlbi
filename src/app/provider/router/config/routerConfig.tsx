@@ -1,15 +1,16 @@
-import { PathRouteProps } from 'react-router';
+import { type PathRouteProps } from 'react-router';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { routerPaths } from '@/shared/config/routerPaths/routerPaths';
 
-const routerConfig: PathRouteProps[]= [
+const routerConfig: PathRouteProps[] = [
   {
     ...routerPaths.main,
-    element: <MainPage/>,
-  }, {
+    element: <MainPage />,
+  },
+  {
     ...routerPaths.about,
-    element: <AboutPage/>,
+    element: <AboutPage />,
   },
 ];
 

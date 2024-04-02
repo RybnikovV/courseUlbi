@@ -6,7 +6,8 @@
   "extends": [
     "standard-with-typescript",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:i18next/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
