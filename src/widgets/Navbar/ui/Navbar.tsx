@@ -22,15 +22,15 @@ export const Navbar: FC<INavbarProps> = (props) => {
       <div>{children}</div>
       <div className={cls.navbar__links}>
         {Object.values(routerPaths).map((routerPath) => {
-          return (
+          return routerPath.name !== '' ? (
             <CustomLink
               key={routerPath.path}
               className={cls['navbar__link-item']}
               to={routerPath.path}
             >
-              {t(routerPath.children)}
+              {t(routerPath.name)}
             </CustomLink>
-          );
+          ) : null;
         })}
       </div>
     </div>
