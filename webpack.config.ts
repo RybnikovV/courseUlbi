@@ -1,7 +1,7 @@
-import webpack from 'webpack';
+import type webpack from 'webpack';
 import path from 'path';
 import { buildWebpackConfig } from './config/webpack/buildWebpackConfig';
-import { IEnv } from './config/webpack/types/config'
+import { type IEnv } from './config/webpack/types/config';
 
 export default (env: IEnv): webpack.Configuration => {
   const options = {
@@ -10,14 +10,14 @@ export default (env: IEnv): webpack.Configuration => {
       html: path.resolve(__dirname, 'public', 'index.html'),
       output: path.resolve(__dirname, 'build'),
       baseModule: path.resolve(__dirname, 'src'),
-      nodeModule: path.resolve(__dirname, 'node_modules')
+      nodeModule: path.resolve(__dirname, 'node_modules'),
     },
     mode: env.mode,
     get isDev() {
-      return this.mode === 'development'
+      return this.mode === 'development';
     },
-    port: env.port || 3000
-  }
+    port: env.port ?? 3000,
+  };
 
-  return buildWebpackConfig(options)
+  return buildWebpackConfig(options);
 };

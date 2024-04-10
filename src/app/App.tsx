@@ -1,27 +1,28 @@
-import { Route, Routes, Link } from 'react-router-dom';
-import { Suspense } from 'react';
 import './styles/index.scss';
-import { MainPage } from '@/pages/MainPage';
-import { AboutPage } from '@/pages/AboutPage';
-import { useTheme } from '@/shared/config/theme'
-import classNames from  '@/shared/lib/classNames/classNames';
+import { AppRouter } from './provider/router';
 
-const App = () => {
-  const { theme, changeTheme } = useTheme();
+import { useTheme } from '@/shared/config/theme';
+import classNames from '@/shared/lib/classNames/classNames';
+
+import { Navbar } from '@/widgets/Navbar';
+
+import { Sidebar } from '@/widgets/Sidebar';
+import { type FC } from 'react';
+
+const App: FC = () => {
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <button onClick={changeTheme}>toggleTheme</button>
-      <Link to={'/'}>Главная</Link>
-      <Link to={'/about'}>О нас</Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path='/' element={<MainPage/>}/>
-          <Route path='/about' element={<AboutPage/>}/>
-        </Routes>
-      </Suspense>
+      <Navbar />
+      <div className="app__content-wrapper">
+        <Sidebar />
+        <div className="app__content">
+          <AppRouter />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -3,11 +3,14 @@ import App from '@/app/App';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@/shared/config/theme';
 
-const root = createRoot(document.getElementById('root'));
+import '@/shared/config/i18n/i18nConfig';
+
+const rootElement = document.getElementById('root')!;
+const root = createRoot(rootElement);
 root.render(
   <BrowserRouter>
     <ThemeProvider>
-      <App/>
+      <App />
     </ThemeProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
 );

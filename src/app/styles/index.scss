@@ -1,11 +1,20 @@
-@import './reset.scss';
-@import './variable/global.scss';
-@import './theme/dark/darkTheme.scss';
-@import './theme/light/ligthTheme.scss';
+@import './reset';
+@import './variable/global';
+@import './theme/dark/darkTheme';
+@import './theme/light/ligthTheme';
 
 .app {
   min-height: 100vh;
   background-color: var(--bg-color);
   font: var(--font-m);
   color: var(--primary-color);
+
+  &__content-wrapper {
+    display: flex;
+  }
+
+  &__content {
+    padding: 8px 16px;
+    flex-grow: 1;
+  }
 }

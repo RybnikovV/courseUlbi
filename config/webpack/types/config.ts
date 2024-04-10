@@ -12,10 +12,10 @@ export interface BuildOptions {
   mode: BuildMode;
   paths: IPath;
   port: number;
-  isDev: Boolean;
+  isDev: boolean;
 }
 
 export interface IEnv {
-  mode: BuildMode,
-  port?: number
+  mode: BuildMode;
+  port?: number;
 }

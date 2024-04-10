@@ -1,7 +1,10 @@
-const Main = () => {
-  return (
-    <div>Main</div>
-  )
-}
+import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-export default Main
+const Main: FC = () => {
+  const { t } = useTranslation();
+
+  return <div>{t('главная')}</div>;
+};
+
+export default Main;
